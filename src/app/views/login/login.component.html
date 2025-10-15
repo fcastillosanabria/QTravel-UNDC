@@ -1,0 +1,53 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+  <div
+    class="bg-white/80 backdrop-blur-md shadow-xl rounded-2xl w-full max-w-md p-8 border border-blue-100 animate-fadeIn"
+  >
+    <!-- Logo o título -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-extrabold text-blue-600 tracking-tight">
+        QTravel-UNDC
+      </h1>
+      <p class="text-gray-500 text-sm mt-1">Inicia sesión para continuar</p>
+    </div>
+
+    <!-- Formulario -->
+    <form (submit)="login(); $event.preventDefault()" class="space-y-5">
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Correo electrónico</label>
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          placeholder="tucorreo@ejemplo.com"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-medium mb-1">Contraseña</label>
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+          placeholder="••••••••"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+      >
+        Iniciar sesión
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <p class="text-center text-sm text-gray-500 mt-6">
+      ¿No tienes cuenta?
+      <a href="#" class="text-blue-600 hover:underline">Regístrate aquí</a>
+    </p>
+  </div>
+</div>

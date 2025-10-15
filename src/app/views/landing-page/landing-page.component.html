@@ -1,0 +1,550 @@
+<!-- Barra de navegación -->
+<header
+  class="sticky top-0 w-full bg-white bg-opacity-100 lg:bg-opacity-90 shadow-md p-3 pr-4 pl-4 lg:pr-24 lg:pl-24 z-40">
+  <div class="flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img
+        src="https://res.cloudinary.com/di9h6cniw/image/upload/v1760568680/Captura_de_pantalla_2025-10-15_174843_jr5olo.png"
+        alt="RenoAs Logo" class="w-40 lg:w-60" />
+    </div>
+
+    <!-- Contenido principal (pantallas grandes) -->
+    <div class="hidden lg:flex flex-col items-end space-y-2 text-gray-500">
+      <div class="flex justify-end p-1">
+        <div class="flex items-center space-x-4 text-gray-500">
+          <!-- Chat de Ventas -->
+          <div class="flex items-center space-x-1">
+            <span class="text-orange-500">💬</span>
+            <a (click)="toggleChatLarge()" href="#" class="hover:text-gray-800">Chat de Ventas</a>
+          </div>
+          <div class="flex items-center space-x-1">
+            <span class="text-green-500">📱</span>
+            <a href="#" class="hover:text-gray-800">WhatsApp</a>
+          </div>
+          <span>|</span>
+          <span class="text-gray-800">(+51) 934 179 705</span>
+          <span>|</span>
+          <div class="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-1 rounded" (click)="goToLogin()">
+            <span class="text-blue-500">👤</span>
+            <span class="hover:text-gray-800 font-medium">
+              Iniciar Sesión en QTravel-UNDC
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between p-1">
+        <nav class="flex items-center space-x-8 text-gray-500 font-bold">
+          <a href="#" class="hover:text-gray-800">PLANES</a>
+          <a href="#" class="hover:text-gray-800">EMPRESA</a>
+          <a href="#" class="hover:text-gray-800">RECURSOS</a>
+          <a href="#" class="hover:text-gray-800">PARTNERS</a>
+          <a href="#" class="hover:text-gray-800">CONTACTO</a>
+          <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Botón hamburguesa (pantallas pequeñas) -->
+    <button class="lg:hidden text-orange-500 focus:outline-none" (click)="toggleSidebar()">
+      <i class="fa-solid fa-bars fa-2xl"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<div [ngClass]="{ 'translate-x-0': sidebarOpen, 'translate-x-full': !sidebarOpen }"
+  class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50">
+  <div class="p-4 flex flex-col space-y-4">
+    <!-- Cerrar botón -->
+    <button class="text-gray-500 self-end focus:outline-none" (click)="toggleSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Opciones del menú -->
+    <nav class="flex flex-col space-y-4 text-gray-500 font-bold">
+      <a href="#" class="hover:text-gray-800">PLANES</a>
+      <a href="#" class="hover:text-gray-800">EMPRESA</a>
+      <a href="#" class="hover:text-gray-800">RECURSOS</a>
+      <a href="#" class="hover:text-gray-800">PARTNERS</a>
+      <a href="#" class="hover:text-gray-800">CONTACTO</a>
+      <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
+    </nav>
+
+    <div class="border-t pt-4">
+      <div class="flex flex-col space-y-2">
+        <div class="flex items-center space-x-1">
+          <span class="text-orange-500">💬</span>
+          <a href="#" class="hover:text-gray-800">Chat de Ventas</a>
+        </div>
+        <div class="flex items-center space-x-1">
+          <span class="text-green-500">📱</span>
+          <a href="#" class="hover:text-gray-800">WhatsApp</a>
+        </div>
+        <span class="text-gray-800">(+51) 934 179 705</span>
+        <div class="flex items-center space-x-1">
+          <span class="text-blue-500">👤</span>
+          <a routerLink="/login" class="hover:text-gray-800">Iniciar Sesión en QTravel-UNDC</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin de Barra de navegación -->
+
+
+<!-- Presentacion -->
+<section class="flex items-center justify-center h-[90vh] lg:min-h-screen" style=" background-color: #E6E6E6;">
+  <div class="">
+    <div class="content_container row margin-top-5">
+      <div class="col-lg-12 col-md-12 col-xs-12 align-center inicio2">
+        <div style="z-index: 50;" class="text-center">
+          <div class=" text-5xl pb-2">¡La transformación está a su alcance con QTravel-UNDC!</div>
+
+          <h1 class="" style="margin: 0;">Software académico, administrativo y de educación virtual para
+            instituciones de educación en Sudamerica.</h1>
+
+          <div class=" p-6">
+            <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
+          </div>
+
+        </div>
+        <img style="z-index: 1;" id="imgCabecera" src="https://www.q10.com/Images/Plataforma_academica.webp"
+          class="img-inicio" alt="Gestión académica (o academica) y software académico (o academico)">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de Presentacion -->
+
+
+<!-- Que somos -->
+<section
+  class="flex flex-col lg:flex-row p-4 lg:pr-52 lg:pl-52 items-center justify-center min-h-screen image-container space-y-6 lg:space-y-0">
+  <!-- Imagen -->
+  <div class="basis-full lg:basis-3/6 px-4 flex items-center justify-center">
+    <img src="https://www.q10.com/images/Sistema_de_gestion_academica_solo_1.webp"
+      alt="Plataforma académica o software académico para la integración de procesos académicos, administrativos, comerciales y educación virtual"
+      class="w-full h-auto div-slide">
+  </div>
+
+  <!-- Descripción -->
+  <div class="basis-full lg:basis-3/5 px-4 div-slide text-center lg:text-left">
+    <h2 class="font-semibold text-2xl lg:text-4xl text-orange-500">¿Qué es QTravel-UNDC?</h2>
+    <p class="text-base lg:text-lg leading-6 my-4">QTravel-UNDC es un software en la nube que apoya la asistencia para
+      las
+      instituciones educativas.</p>
+    <p class="text-base lg:text-lg leading-6 my-4">Como solución integral orientada al servicio genera un impacto
+      positivo en el
+      crecimiento y rentabilidad de su organización.</p>
+  </div>
+</section>
+<!-- Fin de Que somos -->
+
+
+<!-- Funciones -->
+<section class="pb-40" style="z-index: 1; background-color: #E6E6E6;">
+  <div class="flex flex-col items-center justify-center py-20 px-6 lg:px-40">
+    <div class="text-center">
+      <h3 class="text-3xl font-semibold mb-4">
+        Plataforma integral, la clave del progreso en su institución educativa.
+      </h3>
+      <div class="flex items-center justify-center">
+        <span class="text-lg leading-6">
+          QTravel-UNDC es la clave para impulsar el progreso en su institución educativa. Al combinar módulos de
+          administración,
+          CRM y educación virtual en un solo sistema, simplificamos y optimizamos sus procesos. Esto les permite
+          centrarse en lo más importante: brindar una educación de calidad a sus estudiantes.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-6 lg:px-44">
+    <!-- Gestión Comercial -->
+    <div class="funciones-container-left">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-green-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/gestion_comercial.webp" class="h-full"
+            alt="Gestión Comercial">
+        </div>
+        <h3 class="text-lg font-bold text-green-700 mt-4 group-hover:text-green-800 transition-colors duration-300">
+          Gestión Comercial
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Potencialice su gestión comercial y obtenga información para optimizar el seguimiento de prospectos,
+          aumentando la efectividad en el proceso de ventas.
+        </p>
+      </div>
+    </div>
+
+
+
+    <!-- Gestión Académica -->
+    <div class="funciones-container-left overflow-x-hidden md:overflow-visible">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-orange-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/gestion_academica.webp" class="h-full"
+            alt="Gestión Académica">
+        </div>
+        <h3 class="text-lg font-bold text-orange-600 mt-4 group-hover:text-orange-700 transition-colors duration-300">
+          Gestión Académica
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Administre la información académica de sus estudiantes de principio a fin para mejorar procesos como:
+          matrículas, programación de horarios, registro de notas y evaluación docente.
+        </p>
+      </div>
+    </div>
+
+    <!-- Educación Virtual -->
+    <div class="funciones-container-right overflow-x-hidden md:overflow-visible">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-purple-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/educacion_virtual.webp" class="h-full"
+            alt="Educación Virtual">
+        </div>
+        <h3 class="text-lg font-bold text-purple-700 mt-4 group-hover:text-purple-800 transition-colors duration-300">
+          Educación Virtual
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Facilite la comunicación entre sus docentes y estudiantes mediante la utilización de contenidos dinámicos,
+          publicación de anuncios, cuestionarios, foros, tareas e interacción en tiempo real.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bienestar Institucional -->
+    <div class="funciones-container-right overflow-x-hidden md:overflow-visible">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-blue-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/bienestar_institucional.webp"
+            class="h-full" alt="Bienestar Institucional">
+        </div>
+        <h3 class="text-lg font-bold text-blue-700 mt-4 group-hover:text-blue-800 transition-colors duration-300">
+          Bienestar Institucional
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Promueva la satisfacción de sus estudiantes por medio de encuestas, evaluación institucional y solicitudes en
+          línea, además de tener acceso a una bolsa de empleo y gestionar las prácticas laborales en el mismo sistema.
+        </p>
+      </div>
+    </div>
+
+    <!-- Gestión Financiera -->
+    <div class="funciones-container-left-2 overflow-x-hidden md:overflow-visible">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-red-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/gestion_financiera.webp"
+            class="h-full" alt="Gestión Financiera">
+        </div>
+        <h3 class="text-lg font-bold text-red-600 mt-4 group-hover:text-red-700 transition-colors duration-300">
+          Gestión Financiera
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Controle adecuadamente las cuentas por cobrar y los ingresos de sus estudiantes mediante órdenes de pago,
+          recibos, facturas, créditos e informes, que faciliten tomar decisiones acertadamente.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comunidad en Línea -->
+    <div class="funciones-container-left-2 overflow-x-hidden md:overflow-visible">
+      <div
+        class="div-slide group flex flex-col items-center text-center p-4 bg-white shadow-lg rounded-lg hover:bg-orange-100 duration-700">
+        <div
+          class="w-full h-48 flex justify-center items-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors duration-700">
+          <img loading="lazy" src="https://www.q10.com/Images/ModulosEstrategicos/comunidad_en_linea.webp"
+            class="h-full" alt="Comunidad en Línea">
+        </div>
+        <h3 class="text-lg font-bold text-orange-600 mt-4 group-hover:text-orange-700 transition-colors duration-300">
+          Comunidad en Línea
+        </h3>
+        <p class="text-gray-600 mt-2 group-hover:text-gray-800 transition-colors duration-300">
+          Aumente sus canales de comunicación entre los estudiantes, docentes y administrativos por medio del chat
+          institucional de Q10, SMS mensajes de texto y la App móvil.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de Funciones -->
+
+
+<!-- Soluciones para... -->
+<section class="py-20 soluciones-section" style="background-color: #f9c310;">
+  <div class="relative grid md:grid-cols-[2fr,3fr]">
+
+    <!-- primera columna (más estrecha) -->
+    <div class="">
+      <!-- Imagen (mitad izquierda) -->
+      <div class="absolute div-slide" style="top: -150px; left: 0;">
+        <img src="https://www.q10.com/images/LogosTiposInstituciones/Plataforma_Q10.webp"
+          class="w-4/6 img_responsive img-laptop" alt="Registro y visualización de notas" />
+      </div>
+    </div>
+
+    <!-- segunda columna (más ancha) -->
+    <div class="">
+      <!-- Texto (mitad derecha) -->
+      <div class="w-full pr-8 py-6 text-white">
+        <h3 class="text-upper text-5xl font-semibold mt-2 mb-12">Solución especializada para cada tipo de institución:
+        </h3>
+        <div class="relative grid md:grid-cols-2 gap-6">
+          <div class="contenedor-instituciones space-y-4">
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Colegios y Bachillerato para Adultos</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Educación Continuada</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Institutos de Idiomas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-instituciones space-y-4">
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Colegios y Bachillerato para Adultos</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Educación Continuada</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Institutos de Idiomas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de prueba gratuita -->
+        <div class="mt-8">
+          <a href="/PruebaGratuita/Colombia/Profesional"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-color-text--color-1 no-decoration btn-white text-bold">
+            Prueba Gratuita
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+          </a>
+          <div class="mt-4">
+            <img src="/Images/Rayas_Banner_amarillo.webp" class="w-full" alt="Elementos escolares">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Fin de Soluciones para... -->
+
+
+<!-- Sección de imagen con parallax -->
+<section class="relative flex items-center justify-end w-full overflow-hidden h-[60vh]" id="parallaxSection">
+  <!-- Fondo Parallax (Imagen de fondo) -->
+  <div class="absolute top-0 left-0 w-full h-[100vh] bg-cover bg-center z-0"
+    style="background-image: url('https://www.q10.com/Images/Home/fondo_escritorio_el_momento.png');">
+    <!-- La imagen de fondo no se mueve, solo el parallax -->
+  </div>
+
+  <!-- Contenido centrado que permanece fijo sobre la imagen -->
+  <div class="relative z-10 px-4 text-center text-white">
+    <h2 class="font-semibold text-4xl mb-4">El momento es ahora</h2>
+    <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
+  </div>
+</section>
+
+
+<!-- contactanos -->
+<section class="py-20" style=" background-color: #E6E6E6;">
+  <div class="relative grid md:grid-cols-[2fr,3fr]">
+
+    <!-- primera columna (más estrecha) -->
+    <div class="">
+      <!-- Imagen (mitad izquierda) -->
+      <div class="absolute div-slide" style="top: -150px; left: 10%;">
+        <img src="https://www.canonvalles.com/wp-content/uploads/2019/01/chica.png" class=" img_responsive img-laptop"
+          alt="Registro y visualización de notas" />
+      </div>
+    </div>
+
+    <!-- segunda columna (más ancha) -->
+    <div class="">
+      <!-- Texto (mitad derecha) -->
+      <div class="w-full pr-8 py-6 text-black">
+        <h3 class="text-upper text-5xl font-semibold mt-2 mb-12">Un software con respaldo empresarial
+        </h3>
+        <div class="relative grid md:grid-cols-2 gap-6">
+          <div class="contenedor-instituciones space-y-4">
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Soporte técnico</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Respaldo Tecnológico</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Seguridad de la información</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contenedor-instituciones space-y-4">
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Garantia</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> Eficiencia y rapidez</span>
+              </div>
+            </div>
+
+            <div class="tipo-institucion">
+              <div class="nombre-tipo-institucion">
+                <span class="prestigio-item"><i class="fa fa-circle"></i> A tu modo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de prueba gratuita -->
+        <div class="mt-8">
+          <a href="/PruebaGratuita/Colombia/Profesional"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect mdl-color-text--color-1 no-decoration btn-white text-bold">
+            Prueba Gratuita
+            <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+          </a>
+          <div class="mt-4">
+            <img src="/Images/Rayas_Banner_amarillo.webp" class="w-full" alt="Elementos escolares">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<section class="bg-gray-500 text-white py-8 px-20">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap">
+      <!-- Logo y País -->
+      <div class="w-full lg:w-2/3 flex items-center">
+        <img src="https://www.q10.com/images/Logo_Q10_Blanco.png" alt="Logo blanco Q10" class="h-12 mr-8" />
+        <div>
+          <div class="relative">
+            <button class="flex items-center text-white hover:text-gray-200 focus:outline-none"
+              (click)="toggleDropdown()">
+              <img src="https://www.q10.com/Images/Paises/icono_peru.webp" alt="flag-peru" class="h-6 w-6 mr-2" />
+              Perú
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <ul *ngIf="dropdownOpen" class="absolute bg-white text-black shadow-lg rounded-lg mt-2 w-48 z-50">
+              <li *ngFor="let country of countries" class="p-2 hover:bg-gray-100 flex items-center">
+                <a [href]="country.link" class="flex items-center text-sm">
+                  <img [src]="country.icon" [alt]="country.name" class="h-6 w-6 mr-2" />
+                  {{ country.name }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="mt-4 text-sm">© QTravel-UNDC - 2024.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de Footer -->
+
+
+<!-- Redes sociales -->
+<div class="fixed bottom-4 left-4 z-50">
+  <div class="flex flex-col items-center space-y-2">
+    <a href="https://facebook.com" target="_blank" class="text-blue-600 hover:text-blue-800">
+      <i class="fab fa-facebook-f text-2xl"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="text-pink-500 hover:text-pink-700">
+      <i class="fab fa-instagram text-2xl"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="text-green-500 hover:text-green-700">
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+  </div>
+</div>
+<!-- Fin de Redes sociales -->
+
+
+<!-- ChatBot -->
+<div class="fixed bottom-4 right-4 z-50">
+  <!-- Botón flotante -->
+  <button (click)="toggleChatLarge()"
+    class="bg-orange-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
+    <i class="fa-regular fa-message fa-bounce fa-xl"></i>
+  </button>
+
+  <!-- Interfaz del chatbot -->
+  <div class="absolute bottom-16 right-0 bg-white w-80 h-96 rounded-lg shadow-lg border border-gray-200 flex flex-col"
+    [ngClass]="{ 'hidden': !isChatOpenLarge }">
+    <!-- Header del chatbot -->
+    <div class="flex justify-between items-center border-b pb-2 px-4 bg-orange-400">
+      <h2 class="text-lg font-semibold text-white">Chatbot</h2>
+      <button (click)="toggleChatLarge()" class="text-gray-500 hover:text-gray-800">X</button>
+    </div>
+
+    <!-- Contenido del chat -->
+    <div class="flex-1 overflow-y-auto p-4 scroll-smooth">
+      <div *ngFor="let message of messages" class="mb-4">
+        <p [ngClass]="{ 'text-blue-500': message.from === 'user', 'text-gray-600': message.from === 'bot' }"
+          class="text-sm">
+          {{ message.text }}
+        </p>
+      </div>
+    </div>
+
+
+    <!-- Campo de entrada y botón de enviar -->
+    <div class="border-t p-4 flex">
+      <input [(ngModel)]="userMessage" type="text" placeholder="Escribe un mensaje..."
+        class="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring focus:ring-blue-500" />
+      <button (click)="sendMessage()" class="bg-orange-500 text-white px-4 py-2 rounded-md ml-2">Enviar</button>
+    </div>
+
+  </div>
+</div>
+<!-- Fin de ChatBot -->
