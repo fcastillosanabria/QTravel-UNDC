@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // 👈 importa esto
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 // Registramos el plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, FormsModule], // 👈 agrega aquí
+  imports: [CommonModule, FormsModule, HttpClientModule ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })

@@ -1,97 +1,59 @@
 <!-- Barra de navegación -->
-<header
-  class="sticky top-0 w-full bg-white bg-opacity-100 lg:bg-opacity-90 shadow-md p-3 pr-4 pl-4 lg:pr-24 lg:pl-24 z-40">
-  <div class="flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex items-center">
-      <img
-        src="https://res.cloudinary.com/di9h6cniw/image/upload/v1760568680/Captura_de_pantalla_2025-10-15_174843_jr5olo.png"
-        alt="RenoAs Logo" class="w-40 lg:w-60" />
-    </div>
-
-    <!-- Contenido principal (pantallas grandes) -->
-    <div class="hidden lg:flex flex-col items-end space-y-2 text-gray-500">
-      <div class="flex justify-end p-1">
-        <div class="flex items-center space-x-4 text-gray-500">
-          <!-- Chat de Ventas -->
-          <div class="flex items-center space-x-1">
-            <span class="text-orange-500">💬</span>
-            <a (click)="toggleChatLarge()" href="#" class="hover:text-gray-800">Chat de Ventas</a>
-          </div>
-          <div class="flex items-center space-x-1">
-            <span class="text-green-500">📱</span>
-            <a href="#" class="hover:text-gray-800">WhatsApp</a>
-          </div>
-          <span>|</span>
-          <span class="text-gray-800">(+51) 934 179 705</span>
-          <span>|</span>
-          <div class="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-1 rounded" (click)="goToLogin()">
-            <span class="text-blue-500">👤</span>
-            <span class="hover:text-gray-800 font-medium">
-              Iniciar Sesión en QTravel-UNDC
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="flex justify-between p-1">
-        <nav class="flex items-center space-x-8 text-gray-500 font-bold">
-          <a href="#" class="hover:text-gray-800">PLANES</a>
-          <a href="#" class="hover:text-gray-800">EMPRESA</a>
-          <a href="#" class="hover:text-gray-800">RECURSOS</a>
-          <a href="#" class="hover:text-gray-800">PARTNERS</a>
-          <a href="#" class="hover:text-gray-800">CONTACTO</a>
-          <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Botón hamburguesa (pantallas pequeñas) -->
-    <button class="lg:hidden text-orange-500 focus:outline-none" (click)="toggleSidebar()">
-      <i class="fa-solid fa-bars fa-2xl"></i>
-    </button>
+<header class="sticky top-0 w-full bg-white shadow-md p-3 px-6 lg:px-24 z-40 flex items-center justify-between">
+  <!-- Logo -->
+  <div class="flex items-center">
+    <img
+      src="https://res.cloudinary.com/di9h6cniw/image/upload/v1760568680/Captura_de_pantalla_2025-10-15_174843_jr5olo.png"
+      alt="QTravel Logo" class="w-40 lg:w-60" />
   </div>
-</header>
 
-<!-- Sidebar -->
-<div [ngClass]="{ 'translate-x-0': sidebarOpen, 'translate-x-full': !sidebarOpen }"
-  class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50">
-  <div class="p-4 flex flex-col space-y-4">
-    <!-- Cerrar botón -->
-    <button class="text-gray-500 self-end focus:outline-none" (click)="toggleSidebar()">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-
-    <!-- Opciones del menú -->
-    <nav class="flex flex-col space-y-4 text-gray-500 font-bold">
-      <a href="#" class="hover:text-gray-800">PLANES</a>
-      <a href="#" class="hover:text-gray-800">EMPRESA</a>
-      <a href="#" class="hover:text-gray-800">RECURSOS</a>
-      <a href="#" class="hover:text-gray-800">PARTNERS</a>
-      <a href="#" class="hover:text-gray-800">CONTACTO</a>
-      <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
-    </nav>
-
-    <div class="border-t pt-4">
-      <div class="flex flex-col space-y-2">
+  <!-- 🔹 NAV COMPLETO (solo en pantallas grandes) -->
+  <div class="hidden lg:flex flex-col items-end space-y-2 text-gray-500">
+    <!-- Línea superior -->
+    <div class="flex justify-end p-1">
+      <div class="flex items-center space-x-4 text-gray-500">
         <div class="flex items-center space-x-1">
           <span class="text-orange-500">💬</span>
-          <a href="#" class="hover:text-gray-800">Chat de Ventas</a>
+          <a (click)="toggleChatLarge()" href="#" class="hover:text-gray-800">Chat de Ventas</a>
         </div>
         <div class="flex items-center space-x-1">
           <span class="text-green-500">📱</span>
           <a href="#" class="hover:text-gray-800">WhatsApp</a>
         </div>
+        <span>|</span>
         <span class="text-gray-800">(+51) 934 179 705</span>
-        <div class="flex items-center space-x-1">
+        <span>|</span>
+        <div class="flex items-center space-x-1 cursor-pointer hover:bg-gray-100 p-1 rounded" (click)="goToLogin()">
           <span class="text-blue-500">👤</span>
-          <a routerLink="/login" class="hover:text-gray-800">Iniciar Sesión en QTravel-UNDC</a>
+          <span class="hover:text-gray-800 font-medium">
+            Iniciar Sesión en QTravel-UNDC
+          </span>
         </div>
       </div>
     </div>
+
+    <!-- Línea inferior -->
+    <div class="flex justify-between p-1">
+      <nav class="flex items-center space-x-8 text-gray-500 font-bold">
+        <a href="#" class="hover:text-gray-800">PLANES</a>
+        <a href="#" class="hover:text-gray-800">EMPRESA</a>
+        <a href="#" class="hover:text-gray-800">RECURSOS</a>
+        <a href="#" class="hover:text-gray-800">PARTNERS</a>
+        <a href="#" class="hover:text-gray-800">CONTACTO</a>
+        <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600">PRUEBA GRATUITA</a>
+      </nav>
+    </div>
   </div>
-</div>
+
+  <!-- 🔹 SOLO BOTÓN LOGIN (pantallas pequeñas) -->
+  <div
+    class="flex lg:hidden items-center space-x-1 bg-orange-50 hover:bg-blue-100 cursor-pointer px-3 py-2 rounded-md shadow-sm transition-all duration-200"
+    (click)="goToLogin()">
+    <span class="text-blue-600 text-lg">👤</span>
+    <span class="font-semibold text-blue-700 text-sm sm:text-base">Iniciar Sesión</span>
+  </div>
+</header>
+
 <!-- Fin de Barra de navegación -->
 
 

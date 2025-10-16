@@ -1,8 +1,6 @@
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-6">
-  <div
-    class="bg-white/80 backdrop-blur-md shadow-xl rounded-2xl w-full max-w-md p-8 border border-blue-100 animate-fadeIn"
-  >
-    <!-- Logo o título -->
+  <div class="bg-white/80 backdrop-blur-md shadow-xl rounded-2xl w-full max-w-md p-8 border border-blue-100 animate-fadeIn">
+    <!-- Logo -->
     <div class="text-center mb-6">
       <h1 class="text-3xl font-extrabold text-blue-600 tracking-tight">
         QTravel-UNDC
@@ -43,6 +41,9 @@
         Iniciar sesión
       </button>
     </form>
+
+    <!-- Mensaje de error o éxito -->
+    <p *ngIf="mensaje" class="text-center mt-4 text-red-500">{{ mensaje }}</p>
 
     <!-- Footer -->
     <p class="text-center text-sm text-gray-500 mt-6">

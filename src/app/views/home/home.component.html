@@ -1,0 +1,19 @@
+<div id="panelContainer" style="display: block;">
+  <h1 id="saludoUsuario">Bienvenido</h1>
+  <p id="correoUsuario">Tu correo es:</p>
+  <button onclick="cerrarSesion()">Cerrar sesión</button>
+
+  <div class="container mt-4">
+    <div id="hojasContainer" class="row justify-content-center">
+      <!-- Aquí se agregan los bloques -->
+    </div>
+
+    <div id="paginacion" class="mt-4 d-flex justify-content-center align-items-center">
+      <!-- Contenedor Flexbox para los elementos de paginación -->
+      <button id="prevBtn" class="btn btn-secondary" onclick="cambiarPagina(-1)">Anterior</button>
+      <span id="paginaActual" class="mx-2">1</span>
+      <button id="nextBtn" class="btn btn-secondary" onclick="cambiarPagina(1)">Siguiente</button>
+    </div>
+  </div>
+
+</div>
