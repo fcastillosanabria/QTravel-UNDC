@@ -25,7 +25,7 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy, OnInit {
 
 
   goToLogin() {
-  this.router.navigate(['/login']);
+  this.router.navigate(['/home']);
 }
 
   isChatOpenLarge: boolean = false;

@@ -15,28 +15,9 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  email = '';
-  password = '';
-  mensaje = '';
+  constructor(private router: Router, private loginService: LoginService) {} // ✅ Inyectar Router aquí
 
-  constructor(private loginService: LoginService, private router: Router) {}
-
-  login() {
-    this.loginService.login(this.email, this.password)
-      .then(res => {
-        if (res.success) {
-          // Opcional: mostrar mensaje de bienvenida
-          this.mensaje = `Bienvenido ${res.data.nombre}`;
-
-          // Redirigir a Home
-          this.router.navigate(['/home']);
-        } else {
-          this.mensaje = res.error;
-        }
-      })
-      .catch(err => {
-        this.mensaje = 'Error al conectar con el servidor';
-        console.error(err);
-      });
+  goToHome() {
+    this.router.navigate(['/home']); // ✅ Ya funciona
   }
 }
